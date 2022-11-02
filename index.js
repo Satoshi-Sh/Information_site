@@ -25,7 +25,8 @@ http.createServer(function(req,res){
     }
    
     const data = fs.readFileSync(file,'utf8')
-    res.end(data)
+    res.write(data)
+    return res.end
 }).listen(3000)}
 catch (err) {
   console.error(err);
